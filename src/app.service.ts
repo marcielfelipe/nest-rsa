@@ -16,11 +16,11 @@ export class AppService {
     // you must have 'public-key' file the key you want to encrypt by it
 
     const encryptedText = nodeRSA.encryptStringWithRsaPublicKey({ 
-      text: 'Marciel', 
+      text: '0123456789!@#$%¨&*()_+[]{}~/^?;:,.<>', 
       keyPath:'./public-key'
     });
 
-    console.log({ encryptedText });
+    //console.log({ encryptedText });
 
     //result:  {
     //   encryptedText: 'QAoJBAj7ZqYR9Qb9vFGfpjBVY7BP0MtlPywyxMSodA7WmOmOn0glOlrLxUqjJrmaKsqxdJxZadEMAM8+6gLNhwcLtbFPRLQEUTSHk2NNhehsPOESoNjwbXOj5Y+zBCSkjVuW6MRkdaTZeGXi0sii1OqvIQGmOaOR2xzEdDj2eD8='
@@ -34,8 +34,8 @@ export class AppService {
     });
 
     
-    console.log({ decryptedText });
+    //console.log({ decryptedText });
     // result: { decryptedText: 'hello' }
-    return { decryptedText,encryptedText}
+    return {text: decryptedText, encryptedText, decryptedText, publicKey, privateKey}
   }
 }
